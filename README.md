@@ -84,7 +84,7 @@
 </p>
 <br><br>
 
-<h2 id="section3"> تنظیمات ربات OpeningBot </h2>
+<h2 id="section3" align="center"> تنظیمات ربات OpeningBot </h2>
 &nbsp;&nbsp;
 <p>&nbsp;
  تنظیمات اولیه ربات را دونه به دونه برسی کنیم و ببینیم چه امکاناتی به ما میدهد 
