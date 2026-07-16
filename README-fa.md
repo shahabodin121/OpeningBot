@@ -343,7 +343,7 @@
 <p>
 <strong> 1- دانلود فایل اجرایی</strong> – ابتدا فایل اجرایی ربات را از لینک زیر دانلود کنید.
 <br>
-<a href="#">لینک دانلود</a>
+<a href="https://github.com/shahabodin121/OpeningBot/raw/refs/heads/main/OpeningBot.ex5">لینک دانلود</a>
 <br>
     سپس فایل را از محل دانلود شده کپی کنید.
 </p>
