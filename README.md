@@ -342,76 +342,94 @@
 </ul>
 
  
-<h2>آموزش نصب و اجرای ربات متاتریدر ۵</h1>
+<h2 id="section2" align="center">آموزش نصب و اجرای ربات متاتریدر ۵</h2>
 
 <h3>نصب ربات</h3>
 
-<ol>
-    <li>
-        <strong>دانلود فایل اجرایی</strong> – ابتدا فایل اجرایی ربات را از لینک زیر دانلود کنید.
-        <br>
-        <a href="#">لینک دانلود</a>
-        <!-- <br>
-        <img src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/4.jpg" width="200">
-        <br> -->
-        سپس فایل را از محل دانلود شده کپی کنید.
-    </li>
+<p>
+<strong> 1- دانلود فایل اجرایی</strong> – ابتدا فایل اجرایی ربات را از لینک زیر دانلود کنید.
+<br>
+<a href="#">لینک دانلود</a>
+<br>
+    سپس فایل را از محل دانلود شده کپی کنید.
+</p>
 
-<li>
-    <strong>باز کردن دیتا فولدر</strong> – متاتریدر ۵ را باز کنید و از تب File گزینه Open Data Folder را انتخاب کنید.
-    <br>
-    <img src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/4.jpg" alt="محل قرار گرفتن عکس Open Data Folder" width="40%">
-</li>
+<p>
+<br><br>
+<strong> 2- باز کردن دیتا فولدر</strong> – متاتریدر ۵ را باز کنید و از تب File گزینه Open Data Folder را انتخاب کنید.
+<br><br>
+<div align="center">
+<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/4.jpg" alt="محل قرار گرفتن عکس Open Data Folder" width="40%">
+</div>
+</p>
 
-<li>
-    <strong>وارد پوشه MQL5 شوید</strong>.
-    <br>
-    <img src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/5.jpg" alt="محل قرار گرفتن عکس پوشه MQL5" width="60%">
-</li>
+<p>
+<br><br>
+<strong> 3- وارد پوشه MQL5 شوید</strong>.
+<br><br>
+<div align="center">
+<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/5.jpg" alt="محل قرار گرفتن عکس پوشه MQL5" width="60%">
+</div>
+</p>
 
-<li>
-    <strong>وارد پوشه Experts شوید</strong>.
-    <br>
-    <img src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/6.jpg" alt="محل قرار گرفتن عکس پوشه Experts" width="60%">
-</li>
+<p>
+<br><br>
+<strong> 4- وارد پوشه Experts شوید</strong>.
+<br><br>
+<div align="center">
+<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/6.jpg" alt="محل قرار گرفتن عکس پوشه Experts" width="60%">
+</div>
+</p>
 
-<li>
-    <strong>پیست کردن فایل</strong> – در این پوشه راست کلیک کنید و گزینه Paste را انتخاب کنید تا فایل اجرایی ربات را در آن قرار دهید.
-    <br>
-    <img src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/7.jpg" alt="محل قرار گرفتن عکس راست کلیک و Paste" width="60%">
-</li>
-</ol>
+<p>
+<br><br>
+<strong> 5- پیست کردن فایل</strong> – در این پوشه راست کلیک کنید و گزینه Paste را انتخاب کنید تا فایل اجرایی ربات را در آن قرار دهید.
+<br><br>
+<div align="center">
+<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/7.jpg" alt="محل قرار گرفتن عکس راست کلیک و Paste" width="60%">
+</div>
+</p>
 
 <p><strong>نتیجه:</strong> ربات با موفقیت نصب شد.</p>
 
-<hr>
+<br><br>
 
-<h2>اجرای ربات</h2>
+<h2 >اجرای ربات</h2>
 
-<ol>
-    <li>
-        <strong>باز کردن Navigator</strong> – از تب View گزینه Navigator را انتخاب کنید.
-        <br>
-        <img src="images/navigator.jpg" alt="محل قرار گرفتن عکس Navigator" width="200">
-    </li>
+<p>
+<br><br>
+<strong> 1- باز کردن Navigator</strong> – از تب View گزینه Navigator را انتخاب کنید.
+<br><br>
+<div align="center">
+<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/8.jpg" alt="محل قرار گرفتن عکس Navigator" width="40%">
+</div>
+</p>
 
-<li>
-    <strong>اجرای ربات OpeningBot</strong> – پس از باز شدن Navigator، در بخش Expert Advisors ربات OpeningBot را با دابل کلیک اجرا کنید.
+<p>
+<br><br>
+<strong> 2- اجرای ربات OpeningBot</strong> – پس از باز شدن Navigator، در بخش Expert Advisors ربات OpeningBot را با دابل کلیک اجرا کنید.
+<br><br>
+<div align="center">
+<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/9.jpg" alt="محل قرار گرفتن عکس اجرای OpeningBot" width="60%">
+</div>
+</p>
+
+<p>
+<br><br>
+<strong> 3- صفحه Common (تنظیمات اولیه)</strong> – پس از دابل کلیک، صفحه ابتدایی یا Common باز میشود.
+<br><br>
+<div align="center">
+<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/10.jpg" alt="محل قرار گرفتن عکس صفحه Common" width="60%">
+</div>
+</p>
+
+<p>
+    <strong>نکات مهم:</strong>
     <br>
-    <img src="images/openingbot.jpg" alt="محل قرار گرفتن عکس اجرای OpeningBot" width="200">
-</li>
-
-<li>
-    <strong>صفحه Common (تنظیمات اولیه)</strong> – پس از دابل کلیک، صفحه ابتدایی یا Common باز میشود.
+    - دقت داشته باشید گزینه A و B باید فعال باشند تا ربات اجازه معامله داشته باشد.
     <br>
-    <img src="images/common_tab.jpg" alt="محل قرار گرفتن عکس صفحه Common" width="200">
-    <ul>
-        <li>دقت داشته باشید گزینه A و B باید فعال باشند تا ربات اجازه معامله داشته باشد.</li>
-        <li>تب Inputs شما را به تنظیمات ربات میبرد که در بخش تنظیمات ربات مفصل توضیح داده شده است.</li>
-    </ul>
-    <img src="images/inputs_tab.jpg" alt="محل قرار گرفتن عکس تب Inputs" width="200">
-</li>
-</ol>
+    - تب Inputs شما را به تنظیمات ربات میبرد که در بخش تنظیمات ربات مفصل توضیح داده شده است.
+</p>
 
 <p><strong>نکته:</strong> برای تغییر پارامترهای معاملاتی، حتماً پس از فعال‌سازی گزینه‌های A و B، وارد تب Inputs شوید و تنظیمات مورد نظر را اعمال کنید.</p>
 
