@@ -5,7 +5,7 @@
 //+------------------------------------------------------------------+
 #property copyright   " Telegram : Coder Robo"
 #property link        " https://t.me/CoderRobo"
-#property icon        "Robo.ico"
+#property icon        "Robo.ico" 
 #property description " project manager : Coder Robo "
 #property description " \nThis robot is a research tool that allows you to backtest and assess the risk of your trading strategy .\n Financial markets involve a high level of risk. Please trade with caution."
 #property strict
