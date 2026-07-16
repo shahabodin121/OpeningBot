@@ -1,437 +1,315 @@
 
-<!-- <html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head> -->
-<!-- <body> -->
-<div dir="rtl" >
-<br><br>
-<h1 align="center">OpeningBot 🤖 </h1>
-<p align="center"><strong> ربات معاملاتی برای پلتفرم MetaTrader</strong></p>
+
+<div dir="ltr">
+    <br><br>
+    <h1 align="center">OpeningBot 🤖</h1>
+    <p align="center"><strong>Trading Robot for MetaTrader Platform</strong></p>
+    <p>&nbsp;</p>
+
+<h2>Introduction</h2>
 <p>&nbsp;</p>
-
-<h2>معرفی</h2>
-&nbsp;
-<p>&nbsp;&nbsp;
-     . این ابزار یک ربات معاملاتی خودکار است که بر اساس استراتژی معاملاتی Opening طراحی شده است. 
-    این استراتژی یکی از روش‌های شناخته‌شده در میان معامله‌گران بازارهای طلا، فارکس و کریپتو می‌باشد.
-</p>
-<p>&nbsp;&nbsp;
-     . ربات با ارائه گزینه‌های متنوع، ابزاری قدرتمند برای بررسی و تست مدل‌های مختلف این استراتژی فراهم می‌کند. 
-    امکان سنجش ریسک و رفع ایرادهای استراتژی از طریق بک‌تست و ریل‌تست، از مزایای این ربات محسوب می‌شود.
-</p>
-<p>&nbsp;&nbsp;
-     . این ربات برای پلتفرم MetaTrader (نسخه 4 و 5) توسعه یافته است که یکی از محبوب‌ترین پلتفرم‌ها در میان تریدرها و کارگزاران می‌باشد.
-</p>
-<br><br>
-<bold> - دسترسی سریع : </bold>
- <br><br>
-<div align="frt">
-<a href="#section1"> 1- رفتن به بخش توسعه دهندگان </a>
-<br>
-<a href="#section2"> 2- رفتن به بخش نصب ربات</a>
-<br>
-<a href="#section3"> 3- رفتن به بخش تنظیمات</a>
-<br>
-<a href="#section4"> 4- نگاهی بر استراتژی</a>
-</div>
-<br><br>
-<hr>
-<br>
-<h2 id="section4"> استراتژی معاملاتی</h2>
-<h3>ایده اصلی</h3>
-<p>&nbsp;&nbsp;
-     . ابتدای شروع بازارهای معاملاتی معمولاً زمان ورود حجم جدید، انتشار اخبار، بازتنظیم سفارشات و افزایش نوسان بازار است. 
-    به همین دلیل، محدوده قیمتی تشکیل‌شده در اطراف زمان بازگشایی می‌تواند نشان‌دهنده تعادل اولیه بین خریداران و فروشندگان باشد.
-</p>
-<p>&nbsp;&nbsp;
-     . وقتی قیمت از این محدوده خارج می‌شود، فرض استراتژی این است که بازار احتمالاً جهت غالب خود را مشخص کرده 
-    و ممکن است در همان جهت حرکت ادامه پیدا کند.
-</p>
-
-<h3>تعیین محدوده بازگشایی</h3>
-<p>
-    در این استراتژی ابتدا یک بازه زمانی مشخص تعریف می‌شود. این بازه می‌تواند بسته به سبک معامله‌گر به دو شکل باشد:
-</p>
-<ul>
-    <li><b>قبل از بازگشایی بازار:</b> مثلاً 15 یا 30 دقیقه قبل از شروع رسمی بازار معاملاتی.</li>
-    <li><b>بعد از بازگشایی بازار:</b> مثلاً 5، 15 یا 30 دقیقه اول پس از شروع بازار معاملاتی.</li>
-</ul>
-<p>
-    در این بازه، دو سطح کلیدی ثبت می‌شود:
-</p>
-<ul>
-    <li><b>بالاترین قیمت ثبت‌شده در بازه</b> = Opening High</li>   
-    <li><b>پایین‌ترین قیمت ثبت‌شده در بازه</b> = Opening Low</li> 
-</ul>
-<p>
-    این دو سطح، محدوده اولیه بازار را تشکیل می‌دهند و به‌عنوان مرزهای تصمیم‌گیری برای ورود به معامله استفاده می‌شوند.
-</p>
-
-<h3>منطق ورود به معامله</h3>
-<ul>
-    <li>
-        <b>شکست سقف محدوده:</b> اگر قیمت پس از بازگشایی از سطح Opening High عبور کند، 
-        این شکست به‌عنوان نشانه‌ای از غلبه خریداران در نظر گرفته می‌شود 
-        و می‌تواند سیگنال خرید (Buy) باشد.
-    </li>
-    <li>
-        <b>شکست کف محدوده:</b> اگر قیمت از سطح Opening Low پایین‌تر برود، 
-        این شکست به‌عنوان نشانه‌ای از غلبه فروشندگان در نظر گرفته می‌شود 
-        و می‌تواند سیگنال فروش (Sell) باشد.
-    </li>
-</ul>
-<p>
-    در بسیاری از نسخه‌های این استراتژی، معامله‌گر منتظر بسته شدن یک کندل خارج از محدوده می‌ماند 
-    تا احتمال شکست کاذب کاهش یابد.
-</p>
+<p>&nbsp;&nbsp;This tool is an automated trading robot designed based on the Opening trading strategy. This strategy is one of the well-known methods among traders in gold, Forex, and crypto markets.</p>
+<p>&nbsp;&nbsp;The robot offers various options, providing a powerful tool to test and examine different models of this strategy. The ability to assess risk and fix strategy issues through backtesting and real-time testing is one of the advantages of this robot.</p>
+<p>&nbsp;&nbsp;This robot is developed for the MetaTrader platform (versions 4 and 5), which is one of the most popular platforms among traders and brokers.</p>
 <br><br>
 
-<h2 id="section3" align="center"> تنظیمات ربات OpeningBot </h2>
-&nbsp;&nbsp;
-<p>&nbsp;
- تنظیمات اولیه ربات را دونه به دونه برسی کنیم و ببینیم چه امکاناتی به ما میدهد 
-</p>
-&nbsp;&nbsp;
-<div align="center">
-    <img 
-        src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/1.jpg" 
-        alt="تنظیمات ربات OpeningBot" 
-        width="80%"
-    >
-    <p><i>تصویر مربوط به تنظیمات ربات OpeningBot</i></p>
-</div>
-
-<hr>
-
-<h3>1. تایم فریم معاملاتی</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> امکان انتخاب تایم فریم دلخواه برای معاملات.
-</p>
-<ul>
-    <li>مناسب برای اسکالپ، روزانه و سوینگ</li>
-</ul>
-
-<h3>2. سقف و کف قبل از بازگشایی</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر بخواهیم سقف و کف <b>قبل</b> از زمان بازگشایی در نظر گرفته شود، 
-    این گزینه را <code>true</code> می‌کنیم.
-</p>
-
-<h3>3. سقف و کف بعد از بازگشایی</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر بخواهیم سقف و کف <b>بعد</b> از زمان بازگشایی در نظر گرفته شود، 
-    این گزینه را <code>true</code> می‌کنیم.
-</p>
-
-<div style="background-color: #f0f0f0; padding: 10px; border-right: 4px solid #ff9800;">
-    <b>توجه:</b> گزینه‌های 2 و 3 <b>نمی‌توانند</b> همزمان <code>true</code> باشند.
-</div>
-
-<h3>4. بافر (Buffer) به سقف و کف</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> این گزینه امکان اضافه کردن بافر (بر حسب پیپ) به سقف و کف را فراهم می‌کند 
-    تا شکست ایمن‌تری داشته باشیم.
-</p>
-<ul>
-    <li>کاهش شکست‌های کاذب</li>
-    <li>افزایش دقت ورود</li>
-</ul>
-
-<h3>5. ورود لحظه‌ای (Market Order)</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر بخواهیم بعد از شکست سقف یا کف توسط قیمت جاری، 
-    <b>به‌صورت لحظه‌ای</b> وارد مارکت شویم (در همان جهتی که شکسته شده)، 
-    این گزینه را <code>true</code> می‌کنیم.
-</p>
-
-<h3>6. ورود با کلوز کندل</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر بخواهیم بعد از <b>اولین کلوز</b> در بالای سقف مورد نظر 
-    یا اولین کلوز در پایین کف مورد نظر ورود کنیم، این گزینه را <code>true</code> می‌کنیم.
-</p>
-<ul>
-    <li>با کلوز در بیرون محدوده، شکست معتبرتری دریافت می‌کنیم</li>
-    <li>کاهش سیگنال‌های اشتباه</li>
-</ul>
-
-<h3>7. ورود با Buy Stop / Sell Stop</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر بخواهیم با <code>Buy Stop</code> / <code>Sell Stop</code> وارد مارکت شویم، 
-    این گزینه را <code>true</code> می‌کنیم.
-</p>
-<ul>
-    <li>ربات در بالای سقف <b>Buy Stop</b> قرار می‌دهد</li>
-    <li>هم‌زمان در پایین کف <b>Sell Stop</b> قرار می‌دهد</li>
-</ul>
-
-<div style="background-color: #f0f0f0; padding: 10px; border-right: 4px solid #f44336;">
-    <b>توجه:</b> گزینه‌های 5، 6 و 7 <b>نمی‌توانند</b> همزمان <code>true</code> باشند.
-</div>
-
-<h3 id="section1">8. بازار سیدنی</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر بخواهیم بر روی بازگشایی بازار <b>سیدنی</b> معامله کنیم، 
-    این گزینه را <code>true</code> می‌کنیم.
-</p>
-
-<h3>9. ساعت بازگشایی سیدنی</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر گزینه 8 فعال است، <b>ساعت</b> بازگشایی سیدنی را مشخص می‌کنیم.
-</p>
-
-<h3>10. دقیقه بازگشایی سیدنی</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر گزینه 8 فعال است، <b>دقیقه</b> بازگشایی سیدنی را مشخص می‌کنیم.
-</p>
-
-<h3>11. بازار توکیو</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر بخواهیم بر روی بازگشایی بازار <b>توکیو</b> معامله کنیم، 
-    این گزینه را <code>true</code> می‌کنیم.
-</p>
-
-<h3>12. ساعت بازگشایی توکیو</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر گزینه 11 فعال است، <b>ساعت</b> بازگشایی توکیو را مشخص می‌کنیم.
-</p>
-
-<h3>13. دقیقه بازگشایی توکیو</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر گزینه 11 فعال است، <b>دقیقه</b> بازگشایی توکیو را مشخص می‌کنیم.
-</p>
-
-<h3>14. بازار لندن</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر بخواهیم بر روی بازگشایی بازار <b>لندن</b> معامله کنیم، 
-    این گزینه را <code>true</code> می‌کنیم.
-</p>
-
-<h3>15. ساعت بازگشایی لندن</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر گزینه 14 فعال است، <b>ساعت</b> بازگشایی لندن را مشخص می‌کنیم.
-</p>
-
-<h3>16. دقیقه بازگشایی لندن</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر گزینه 14 فعال است، <b>دقیقه</b> بازگشایی لندن را مشخص می‌کنیم.
-</p>
-
-<h3>17. بازار نیویورک</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر بخواهیم بر روی بازگشایی بازار <b>نیویورک</b> معامله کنیم، 
-    این گزینه را <code>true</code> می‌کنیم.
-</p>
-
-<h3>18. ساعت بازگشایی نیویورک</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر گزینه 17 فعال است، <b>ساعت</b> بازگشایی نیویورک را مشخص می‌کنیم.
-</p>
-
-<hr>
-
-<div align="center">
-    <img 
-        src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/2.jpg" 
-        alt="تنظیمات پیشرفته ربات OpeningBot" 
-        width="80%"
-    >
-    <p><i>تصویر مربوط به تنظیمات پیشرفته ربات OpeningBot</i></p>
-</div>
-
-<hr>
-
-
-<h3>19. دقیقه بازگشایی نیویورک</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> اگر گزینه 17 فعال است، <b>دقیقه</b> بازگشایی نیویورک را مشخص می‌کنیم.
-</p>
-
-
-<h3>20. عمق حد ضرر (Stop Loss Depth)</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> این گزینه امکان افزایش عمق حد ضرر (بر حسب پیپ) را فراهم می‌کند.
-</p>
-<ul>
-    <li>افزایش تحمل نوسانات</li>
-    <li>کاهش خروج‌های زودهنگام</li>
-</ul>
-
-<h3>21. ریسک به درصد موجودی</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> مشخص می‌کند در هر معامله <b>چند درصد</b> از موجودی ریسک شود.
-</p>
-<ul>
-    <li>ورودی: درصد (مثلاً 1، 2، 5)</li>
-</ul>
-
-<h3>22. ریسک به دلار</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> مشخص می‌کند در هر معامله <b>چند دلار</b> ریسک شود.
-</p>
-<ul>
-    <li>ورودی: مقدار دلار (مثلاً 100، 500)</li>
-</ul>
-
-<div style="background-color: #fff3cd; padding: 10px; border-right: 4px solid #ff9800;">
-    <b>توجه:</b> گزینه‌های 21 و 22 <b>نمی‌توانند</b> همزمان مقدار داشته باشند. 
-    باید یکی از آنها که استفاده نمی‌شود <b>0</b> باشد.
-</div>
-
-<h3>23. حد سود (Take Profit)</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> این گزینه نسبت ریسک به بازده (Risk/Reward) را مشخص می‌کند.
-</p>
-<p>&nbsp;&nbsp;
-    <b>محاسبه:</b> فاصله حد ضرر تا نقطه ورود (ریسک) ضرب در این مقدار، حد سود را تعیین می‌کند.
-</p>
-<ul>
-    <li>ورودی: عدد ضریب (مثلاً 2، 3، 5)</li>
-</ul>
-
-<h3>24. اسپرد (Spread)</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> این گزینه مقدار اسپرد (بر حسب پیپ) را در محاسبات حد ضرر و حد سود منظور می‌کند.
-</p>
-<ul>
-    <li>جبران اسپرد در محاسبات</li>
-    <li>افزایش دقت در ورود و خروج</li>
-</ul>
-
-<h3>25. انقضای سفارشات Buy Stop / Sell Stop</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> این گزینه برای معاملات با <code>Buy Stop / Sell Stop</code> کاربرد دارد 
-    و برای سفارشات <b>انقضا</b> تعیین می‌کند.
-</p>
-<p>&nbsp;&nbsp;
-    می‌توانید مشخص کنید <b>چند کندل</b> پس از ثبت سفارش، در صورت فعال نشدن، حذف شود.
-</p>
-<ul>
-    <li>حذف خودکار سفارشات منقضی</li>
-    <li>ورودی: تعداد کندل (مثلاً 3، 5، 10)</li>
-</ul>
-
-<h3>26. رنگ محدوده سقف و کف</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> رنگ محدوده سقف و کفی که ربات برای ورود در نظر دارد.
-</p>
-<ul>
-    <li>قابل تنظیم برای هر بازار</li>
-    <li>نمایش بصری محدوده معاملاتی</li>
-</ul>
-
-<h3>27. خطوط عمودی</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> نمایش خطوط عمودی برای زمان‌های بازگشایی بازارها.
-</p>
-<ul>
-    <li>نمایش بصری زمان‌های کلیدی</li>
-    <li>مشخص کردن محدوده‌های زمانی</li>
-</ul>
-
-<h3>28. رنگ نام بازارها</h3>
-<p>&nbsp;&nbsp;
-    <b>توضیح:</b> رنگ نام بازارها برای نمایش بهتر در چارت.
-</p>
-<ul>
-    <li>سیدنی</li>
-    <li>توکیو</li>
-    <li>لندن</li>
-    <li>نیویورک</li>
-</ul>
-
- 
-<h2 id="section2" align="center">آموزش نصب و اجرای ربات متاتریدر ۵</h2>
-
-<h3>نصب ربات</h3>
-
-<p>
-<strong> 1- دانلود فایل اجرایی</strong> – ابتدا فایل اجرایی ربات را از لینک زیر دانلود کنید.
-<br>
-<a href="#">لینک دانلود</a>
-<br>
-    سپس فایل را از محل دانلود شده کپی کنید.
-</p>
-
-<p>
+<strong>Quick Access:</strong>
 <br><br>
-<strong> 2- باز کردن دیتا فولدر</strong> – متاتریدر ۵ را باز کنید و از تب File گزینه Open Data Folder را انتخاب کنید.
-<br><br>
-<div align="center">
-<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/4.jpg" alt="محل قرار گرفتن عکس Open Data Folder" width="40%">
-</div>
-</p>
-
-<p>
-<br><br>
-<strong> 3- وارد پوشه MQL5 شوید</strong>.
-<br><br>
-<div align="center">
-<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/5.jpg" alt="محل قرار گرفتن عکس پوشه MQL5" width="60%">
-</div>
-</p>
-
-<p>
-<br><br>
-<strong> 4- وارد پوشه Experts شوید</strong>.
-<br><br>
-<div align="center">
-<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/6.jpg" alt="محل قرار گرفتن عکس پوشه Experts" width="60%">
-</div>
-</p>
-
-<p>
-<br><br>
-<strong> 5- پیست کردن فایل</strong> – در این پوشه راست کلیک کنید و گزینه Paste را انتخاب کنید تا فایل اجرایی ربات را در آن قرار دهید.
-<br><br>
-<div align="center">
-<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/7.jpg" alt="محل قرار گرفتن عکس راست کلیک و Paste" width="60%">
-</div>
-</p>
-
-<p><strong>نتیجه:</strong> ربات با موفقیت نصب شد.</p>
-
-<br><br>
-
-<h2 >اجرای ربات</h2>
-
-<p>
-<br><br>
-<strong> 1- باز کردن Navigator</strong> – از تب View گزینه Navigator را انتخاب کنید.
-<br><br>
-<div align="center">
-<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/8.jpg" alt="محل قرار گرفتن عکس Navigator" width="40%">
-</div>
-</p>
-
-<p>
-<br><br>
-<strong> 2- اجرای ربات OpeningBot</strong> – پس از باز شدن Navigator، در بخش Expert Advisors ربات OpeningBot را با دابل کلیک اجرا کنید.
-<br><br>
-<div align="center">
-<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/9.jpg" alt="محل قرار گرفتن عکس اجرای OpeningBot" width="60%">
-</div>
-</p>
-
-<p>
-<br><br>
-<strong> 3- صفحه Common (تنظیمات اولیه)</strong> – پس از دابل کلیک، صفحه ابتدایی یا Common باز میشود.
-<br><br>
-<div align="center">
-<img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/10.jpg" alt="محل قرار گرفتن عکس صفحه Common" width="60%">
-</div>
-</p>
-
-<p>
-    <strong>نکات مهم:</strong>
+<div align="left">
+    <a href="#section1">1- Go to Developers section</a>
     <br>
-    - دقت داشته باشید گزینه A و B باید فعال باشند تا ربات اجازه معامله داشته باشد.
+    <a href="#section2">2- Go to Robot Installation section</a>
     <br>
-    - تب Inputs شما را به تنظیمات ربات میبرد که در بخش تنظیمات ربات مفصل توضیح داده شده است.
+    <a href="#section3">3- Go to Settings section</a>
+    <br>
+    <a href="#section4">4- A Look at the Strategy</a>
+</div>
+<br><br>
+<hr>
+<br>
+
+<h2 id="section4">Trading Strategy</h2>
+
+<h3>Main Idea</h3>
+<p>&nbsp;&nbsp;The beginning of trading sessions usually brings new volume, news releases, order adjustments, and increased market volatility. Therefore, the price range formed around the opening time can indicate the initial balance between buyers and sellers.</p>
+<p>&nbsp;&nbsp;When the price breaks out of this range, the strategy assumes that the market has likely determined its dominant direction and may continue moving in that direction.</p>
+
+<h3>Defining the Opening Range</h3>
+<p>In this strategy, a specific time period is first defined. This period can be in two forms depending on the trader's style:</p>
+<ul>
+    <li><b>Before market open:</b> For example, 15 or 30 minutes before the official start of the trading session.</li>
+    <li><b>After market open:</b> For example, the first 5, 15, or 30 minutes after the start of the trading session.</li>
+</ul>
+<p>During this period, two key levels are recorded:</p>
+<ul>
+    <li><b>Highest price recorded during the period</b> = Opening High</li>
+    <li><b>Lowest price recorded during the period</b> = Opening Low</li>
+</ul>
+<p>These two levels form the initial market range and are used as decision boundaries for entry.</p>
+
+<h3>Entry Logic</h3>
+<ul>
+    <li><b>Breaking the range high:</b> If the price breaks above the Opening High level after the open, this breakout is considered a sign of buyer dominance and can be a Buy signal.</li>
+    <li><b>Breaking the range low:</b> If the price drops below the Opening Low level, this breakout is considered a sign of seller dominance and can be a Sell signal.</li>
+</ul>
+<p>In many versions of this strategy, traders wait for a candle to close outside the range to reduce the chance of false breakouts.</p>
+<br><br>
+
+<h2 id="section3" align="center">OpeningBot Settings</h2>
+<p>&nbsp;&nbsp;Let's review the robot's settings one by one and see what features it offers.</p>
+<br>
+<div align="center">
+    <img src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/1.jpg" alt="OpeningBot Settings" width="80%">
+    <p><i>Image: OpeningBot Settings</i></p>
+</div>
+<hr>
+
+<h3>1. Trading Timeframe</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Select your desired timeframe for trading.</p>
+<ul>
+    <li>Suitable for scalping, day trading, and swing trading</li>
+</ul>
+
+<h3>2. Opening High/Low Before Open</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Set this to <code>true</code> if you want to use the high and low <b>before</b> the market opening time.</p>
+
+<h3>3. Opening High/Low After Open</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Set this to <code>true</code> if you want to use the high and low <b>after</b> the market opening time.</p>
+
+<div style="background-color: #f0f0f0; padding: 10px; border-left: 4px solid #ff9800;">
+    <b>Note:</b> Options 2 and 3 <b>cannot</b> both be <code>true</code> at the same time.
+</div>
+
+<h3>4. Buffer to High/Low</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> This option allows you to add a buffer (in pips) to the high and low levels for a safer breakout.</p>
+<ul>
+    <li>Reduces false breakouts</li>
+    <li>Increases entry accuracy</li>
+</ul>
+
+<h3>5. Instant Entry (Market Order)</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Set this to <code>true</code> if you want to enter the market <b>instantly</b> (in the direction of the breakout) as soon as the price breaks the high or low.</p>
+
+<h3>6. Entry on Candle Close</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Set this to <code>true</code> if you want to enter after the <b>first close</b> above the high or below the low.</p>
+<ul>
+    <li>Gives a more valid breakout signal with candle close</li>
+    <li>Reduces false signals</li>
+</ul>
+
+<h3>7. Entry with Buy Stop / Sell Stop</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Set this to <code>true</code> if you want to enter with <code>Buy Stop</code> / <code>Sell Stop</code> orders.</p>
+<ul>
+    <li>Places a <b>Buy Stop</b> above the high</li>
+    <li>Places a <b>Sell Stop</b> below the low simultaneously</li>
+</ul>
+
+<div style="background-color: #f0f0f0; padding: 10px; border-left: 4px solid #f44336;">
+    <b>Note:</b> Options 5, 6, and 7 <b>cannot</b> all be <code>true</code> at the same time.
+</div>
+
+<h3 id="section1">8. Sydney Session</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Set this to <code>true</code> if you want to trade the <b>Sydney</b> market open.</p>
+
+<h3>9. Sydney Open Hour</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> If option 8 is active, specify the <b>hour</b> of the Sydney open.</p>
+
+<h3>10. Sydney Open Minute</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> If option 8 is active, specify the <b>minute</b> of the Sydney open.</p>
+
+<h3>11. Tokyo Session</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Set this to <code>true</code> if you want to trade the <b>Tokyo</b> market open.</p>
+
+<h3>12. Tokyo Open Hour</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> If option 11 is active, specify the <b>hour</b> of the Tokyo open.</p>
+
+<h3>13. Tokyo Open Minute</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> If option 11 is active, specify the <b>minute</b> of the Tokyo open.</p>
+
+<h3>14. London Session</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Set this to <code>true</code> if you want to trade the <b>London</b> market open.</p>
+
+<h3>15. London Open Hour</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> If option 14 is active, specify the <b>hour</b> of the London open.</p>
+
+<h3>16. London Open Minute</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> If option 14 is active, specify the <b>minute</b> of the London open.</p>
+
+<h3>17. New York Session</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Set this to <code>true</code> if you want to trade the <b>New York</b> market open.</p>
+
+<h3>18. New York Open Hour</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> If option 17 is active, specify the <b>hour</b> of the New York open.</p>
+
+<hr>
+
+<div align="center">
+    <img src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/2.jpg" alt="OpeningBot Advanced Settings" width="80%">
+    <p><i>Image: OpeningBot Advanced Settings</i></p>
+</div>
+
+<hr>
+
+<h3>19. New York Open Minute</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> If option 17 is active, specify the <b>minute</b> of the New York open.</p>
+
+<h3>20. Stop Loss Depth</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> This option allows you to increase the stop loss depth (in pips).</p>
+<ul>
+    <li>Increases tolerance for volatility</li>
+    <li>Reduces premature exits</li>
+</ul>
+
+<h3>21. Risk as Percentage of Balance</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Specifies what <b>percentage</b> of your balance to risk per trade.</p>
+<ul>
+    <li>Input: percentage (e.g., 1, 2, 5)</li>
+</ul>
+
+<h3>22. Risk in Dollars</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Specifies how <b>many dollars</b> to risk per trade.</p>
+<ul>
+    <li>Input: dollar amount (e.g., 100, 500)</li>
+</ul>
+
+<div style="background-color: #fff3cd; padding: 10px; border-left: 4px solid #ff9800;">
+    <b>Note:</b> Options 21 and 22 <b>cannot</b> both have values at the same time. The one you're not using should be set to <b>0</b>.
+</div>
+
+<h3>23. Take Profit</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> This option specifies the Risk/Reward ratio.</p>
+<p>&nbsp;&nbsp;<b>Calculation:</b> The distance from stop loss to entry (risk) multiplied by this value determines the take profit.</p>
+<ul>
+    <li>Input: multiplier (e.g., 2, 3, 5)</li>
+</ul>
+
+<h3>24. Spread</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> This option factors in the spread (in pips) when calculating stop loss and take profit.</p>
+<ul>
+    <li>Compensates for spread in calculations</li>
+    <li>Increases entry and exit accuracy</li>
+</ul>
+
+<h3>25. Buy Stop / Sell Stop Expiry</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> This option is used for <code>Buy Stop / Sell Stop</code> orders and sets an <b>expiry</b> for them.</p>
+<p>&nbsp;&nbsp;You can specify <b>how many candles</b> after placement the order should be removed if not triggered.</p>
+<ul>
+    <li>Auto-removal of expired orders</li>
+    <li>Input: number of candles (e.g., 3, 5, 10)</li>
+</ul>
+
+<h3>26. High/Low Range Color</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Color of the high and low range that the robot uses for entry.</p>
+<ul>
+    <li>Adjustable for each market</li>
+    <li>Visual display of the trading range</li>
+</ul>
+
+<h3>27. Vertical Lines</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Display vertical lines for market opening times.</p>
+<ul>
+    <li>Visual display of key times</li>
+    <li>Identifies time zones</li>
+</ul>
+
+<h3>28. Market Names Color</h3>
+<p>&nbsp;&nbsp;<b>Description:</b> Color of market names for better display on the chart.</p>
+<ul>
+    <li>Sydney</li>
+    <li>Tokyo</li>
+    <li>London</li>
+    <li>New York</li>
+</ul>
+
+<h2 id="section2" align="center">Installation and Execution Guide for MetaTrader 5</h2>
+
+<h3>Installation</h3>
+
+<p>
+    <strong>1- Download the Executable File</strong> – First, download the robot's executable file from the link below.
+    <br>
+    <a href="#">Download Link</a>
+    <br>
+    Then copy the file from the download location.
 </p>
 
-<p><strong>نکته:</strong> برای تغییر پارامترهای معاملاتی، حتماً پس از فعال‌سازی گزینه‌های A و B، وارد تب Inputs شوید و تنظیمات مورد نظر را اعمال کنید.</p>
+<p>
+    <br><br>
+    <strong>2- Open Data Folder</strong> – Open MetaTrader 5 and from the File tab, select Open Data Folder.
+    <br><br>
+</p>
+<div align="center">
+    <img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/4.jpg" alt="Open Data Folder image" width="40%">
+</div>
 
-<!-- </body>
-</html> -->
+<p>
+    <br><br>
+    <strong>3- Enter the MQL5 Folder</strong>.
+    <br><br>
+</p>
+<div align="center">
+    <img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/5.jpg" alt="MQL5 folder image" width="60%">
+</div>
+
+<p>
+    <br><br>
+    <strong>4- Enter the Experts Folder</strong>.
+    <br><br>
+</p>
+<div align="center">
+    <img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/6.jpg" alt="Experts folder image" width="60%">
+</div>
+
+<p>
+    <br><br>
+    <strong>5- Paste the File</strong> – Right-click in this folder and select Paste to place the robot's executable file there.
+    <br><br>
+</p>
+<div align="center">
+    <img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/7.jpg" alt="Paste file image" width="60%">
+</div>
+
+<p><strong>Result:</strong> The robot has been successfully installed.</p>
+
+<br><br>
+
+<h2>How to Run the Robot</h2>
+
+<p>
+    <br><br>
+    <strong>1- Open Navigator</strong> – From the View tab, select Navigator.
+    <br><br>
+</p>
+<div align="center">
+    <img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/8.jpg" alt="Navigator image" width="40%">
+</div>
+
+<p>
+    <br><br>
+    <strong>2- Run OpeningBot</strong> – After Navigator opens, in the Expert Advisors section, double-click OpeningBot to run it.
+    <br><br>
+</p>
+<div align="center">
+    <img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/9.jpg" alt="Running OpeningBot image" width="60%">
+</div>
+
+<p>
+    <br><br>
+    <strong>3- Common Tab (Basic Settings)</strong> – After double-clicking, the initial Common page opens.
+    <br><br>
+</p>
+<div align="center">
+    <img align="center" src="https://github.com/shahabodin121/OpeningBot/blob/main/pic/10.jpg" alt="Common tab image" width="60%">
+</div>
+
+<p>
+    <strong>Important Notes:</strong>
+    <br>
+    - Make sure options A and B are enabled so the robot can trade.
+    <br>
+    - The Inputs tab takes you to the robot's settings, which are explained in detail in the settings section.
+</p>
+
+<p><strong>Note:</strong> To change trading parameters, after enabling options A and B, go to the Inputs tab and apply your desired settings.</p>
+
+</div>
