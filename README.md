@@ -228,7 +228,7 @@
 <p>
     <strong>1- Download the Executable File</strong> – First, download the robot's executable file from the link below.
     <br>
-    <a href="#">Download Link</a>
+    <a href="https://github.com/shahabodin121/OpeningBot/raw/refs/heads/main/OpeningBot.ex5">Download Link</a>
     <br>
     Then copy the file from the download location.
 </p>
